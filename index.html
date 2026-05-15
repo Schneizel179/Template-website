@@ -2,134 +2,187 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>L'Atelier Barbier | Salon de coiffure Paris</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Barber Noir | L'art de la coupe & du soin</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome pour les icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">✂️ L'Atelier Barbier</div>
-            <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-                <li><a href="#avis">Avis</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+
+<div class="custom-cursor"></div>
+
+<nav class="glass-nav">
+    <div class="nav-container">
+        <div class="logo">✦ BARBER NOIR ✦</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+            <li><a href="#testimonials">Avis</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#booking" class="btn-nav">Réserver</a>
             <div class="burger">☰</div>
-        </nav>
-    </header>
+        </div>
+    </div>
+</nav>
 
-    <main>
-        <!-- Section Hero -->
-        <section id="accueil" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>L'Atelier Barbier</h1>
-                <p>Coupe, barbe & soins premium dans une ambiance authentique</p>
-                <a href="#reservation" class="btn-primary">Prendre rendez-vous</a>
+<main>
+    <!-- Hero section avec vidéo en arrière-plan -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1585747860714-2ba6c120c2c9?w=1600">
+                <source src="https://cdn.pixabay.com/video/2022/02/28/111354-683297650_large.mp4" type="video/mp4">
+            </video>
+            <div class="overlay dark"></div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-tag">Paris 11e</span>
+            <h1 class="glow-text">Barber Noir</h1>
+            <p>L’élégance du geste, la précision du rasoir.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn-primary pulse">✂️ Prendre rendez-vous</a>
+                <a href="#services" class="btn-outline">Découvrir</a>
             </div>
-        </section>
+            <div class="hero-stats">
+                <div><span>+500</span> coupes/mois</div>
+                <div><span>4.9 ★</span> (210 avis)</div>
+            </div>
+        </div>
+        <div class="scroll-down">⌵</div>
+    </section>
 
-        <!-- Section Services -->
-        <section id="services" class="services">
-            <div class="container">
-                <h2>Nos prestations</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fas fa-cut"></i>
-                        <h3>Coupe homme</h3>
-                        <p>Coupe tendance ou classique, lavé-coiffé inclus.</p>
-                        <span class="price">29€</span>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-beard"></i>
-                        <h3>Taille de barbe</h3>
-                        <p>Soin complet à l'ancienne avec serviette chaude.</p>
-                        <span class="price">22€</span>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-hand-sparkles"></i>
-                        <h3>Coupe + Barbe</h3>
-                        <p>Duo gagnant pour un look parfait.</p>
-                        <span class="price">45€</span>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-spa"></i>
-                        <h3>Soin cheveux</h3>
-                        <p>Massage crânien et soin hydratant.</p>
-                        <span class="price">35€</span>
-                    </div>
+    <!-- Section Services (cartes avec icônes animées) -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="suptitle">Prestations</span>
+                <h2>Un art à redécouvrir</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="card-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Coupe Signature</h3>
+                    <p>Coupe tendance ou classique, shampoing personnalisé et coiffage.</p>
+                    <div class="price">49€</div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon"><i class="fas fa-beard"></i></div>
+                    <h3>Barbe & Moustache</h3>
+                    <p>Taille au rasoir droit, soin à l'huile d'argan et serviette chaude.</p>
+                    <div class="price">32€</div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3>Duo Royal</h3>
+                    <p>Coupe + barbe complète + soin hydratant.</p>
+                    <div class="price">75€</div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Rituel Détente</h3>
+                    <p>Massage crânien, modelage visage, boisson chaude offerte.</p>
+                    <div class="price">89€</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Section Galerie -->
-        <section id="galerie" class="gallery">
-            <div class="container">
-                <h2>Notre travail</h2>
-                <div class="gallery-grid">
-                    <img src="https://images.unsplash.com/photo-1585747860714-2ba6c120c2c9?w=600" alt="Coupe homme">
-                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600" alt="Barbe">
-                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600" alt="Salon">
-                    <img src="https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?w=600" alt="Soin">
+    <!-- Galerie avec Lightbox -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header light">
+                <span class="suptitle">Notre univers</span>
+                <h2>Un savoir-faire en images</h2>
+                <div class="divider light"></div>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Les images seront chargées dynamiquement via JS pour éviter la duplication -->
+            </div>
+        </div>
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightboxImg">
+        </div>
+    </section>
+
+    <!-- Témoignages avec défilement automatique -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="suptitle">Ils parlent de nous</span>
+                <h2>Votre satisfaction, notre fierté</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Injecté par JS -->
+                </div>
+                <div class="slider-controls">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Section Avis -->
-        <section id="avis" class="testimonials">
-            <div class="container">
-                <h2>Ils nous ont fait confiance</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        <p>"Meilleur barbier du quartier ! Accueil pro, coupe parfaite."</p>
-                        <h4>— Lucas M.</h4>
-                    </div>
-                    <div class="testimonial">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        <p>"Le soin barbe à l'ancienne est incroyable. Je recommande."</p>
-                        <h4>— Karim D.</h4>
-                    </div>
-                    <div class="testimonial">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        <p>"Ambiance cosy, équipe à l'écoute. Mon nouveau rendez-vous coiffure."</p>
-                        <h4>— Sophie T.</h4>
+    <!-- Contact + Carte + Formulaire -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>✦ Barber Noir</h3>
+                    <p><i class="fas fa-map-pin"></i> 24 rue de la Folie-Méricourt, 75011 Paris</p>
+                    <p><i class="fas fa-clock"></i> Mar – Sam : 10h – 19h</p>
+                    <p><i class="fas fa-phone-alt"></i> +33 1 40 29 11 85</p>
+                    <p><i class="fas fa-subway"></i> Métro Saint-Maur (ligne 3)</p>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Section Contact & Réservation -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Contact & Réservation</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> 12 rue de la Roquette, 75011 Paris</p>
-                        <p><i class="fas fa-clock"></i> Mardi - Samedi : 10h - 19h</p>
-                        <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
-                        <p><i class="fas fa-subway"></i> Métro Voltaire (ligne 9)</p>
-                    </div>
-                    <div class="reservation" id="reservation">
-                        <h3>Réservez en ligne</h3>
-                        <!-- Remplacez le lien ci-dessous par votre lien Calendly -->
-                        <a href="https://calendly.com/votre-lien" target="_blank" class="btn-calendly">📅 Choisir un créneau</a>
-                        <p class="small">Cliquez pour être redirigé vers Calendly</p>
-                    </div>
+                <div class="contact-form">
+                    <h3>Une question ?</h3>
+                    <form id="contactForm" action="https://formspree.io/f/mldryqwp" method="POST">
+                        <input type="text" name="name" placeholder="Votre nom" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <textarea name="message" rows="4" placeholder="Votre message..."></textarea>
+                        <button type="submit" class="btn-primary">Envoyer <i class="fas fa-paper-plane"></i></button>
+                        <p id="formStatus" class="form-status"></p>
+                    </form>
                 </div>
             </div>
-        </section>
-    </main>
+            <div id="map" class="map-container"></div>
+        </div>
+    </section>
 
-    <footer>
-        <p>© 2026 L'Atelier Barbier – Tous droits réservés</p>
-    </footer>
+    <!-- Réservation (bloc avec Calendly embed) -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="booking-card">
+                <h2>Réservez votre créneau</h2>
+                <p>Choisissez une date et une heure en toute simplicité.</p>
+                <!-- Calendly inline embed (remplacez par votre lien) -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/barbernoir/rdv" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+        </div>
+    </section>
+</main>
 
-    <script src="script.js"></script>
+<footer>
+    <div class="footer-content">
+        <p>© 2026 Barber Noir – L'art de la coupe depuis 2012</p>
+        <p><a href="#">Mentions légales</a> | <a href="#">Confidentialité</a></p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
