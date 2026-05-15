@@ -143,7 +143,7 @@ body:hover .custom-cursor {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.65);
+    background: rgba(0, 0, 0, 0.65);
 }
 
 .hero-content {
@@ -164,7 +164,7 @@ body:hover .custom-cursor {
     font-family: 'Playfair Display', serif;
     font-size: 5rem;
     margin: 1rem 0;
-    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .glow-text {
@@ -197,7 +197,7 @@ body:hover .custom-cursor {
 .btn-primary:hover {
     background: var(--gold-light);
     transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(200,169,110,0.3);
+    box-shadow: 0 5px 15px rgba(200, 169, 110, 0.3);
 }
 
 .btn-outline {
@@ -236,8 +236,12 @@ body:hover .custom-cursor {
 }
 
 @keyframes bounce {
-    0%,100%{transform:translateX(-50%) translateY(0);}
-    50%{transform:translateX(-50%) translateY(10px);}
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
 }
 
 /* Sections communes */
@@ -277,6 +281,10 @@ body:hover .custom-cursor {
 }
 
 /* Services */
+.services {
+    background: var(--dark-grey);
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -290,19 +298,23 @@ body:hover .custom-cursor {
     padding: 2rem 1.5rem;
     text-align: center;
     transition: var(--transition);
-    border: 1px solid rgba(200,169,110,0.2);
+    border: 1px solid rgba(200, 169, 110, 0.2);
 }
 
 .service-card:hover {
     transform: translateY(-8px);
     border-color: var(--gold);
-    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .card-icon i {
     font-size: 3rem;
     color: var(--gold);
     margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin: 1rem 0;
 }
 
 .price {
@@ -313,6 +325,10 @@ body:hover .custom-cursor {
 }
 
 /* Galerie */
+.gallery {
+    background: var(--black);
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -332,7 +348,7 @@ body:hover .custom-cursor {
 .gallery-grid img:hover {
     transform: scale(1.02);
     filter: grayscale(0);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Lightbox */
@@ -344,7 +360,7 @@ body:hover .custom-cursor {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
 }
@@ -364,7 +380,11 @@ body:hover .custom-cursor {
     cursor: pointer;
 }
 
-/* Testimonials slider */
+/* Témoignages slider */
+.testimonials {
+    background: var(--dark-grey);
+}
+
 .testimonial-slider {
     position: relative;
     overflow: hidden;
@@ -380,12 +400,13 @@ body:hover .custom-cursor {
     flex: 0 0 100%;
     padding: 2rem;
     text-align: center;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 32px;
     margin: 0 1rem;
 }
 
-.testimonial i.fa-star, .testimonial i.fa-star-half-alt {
+.testimonial i.fa-star,
+.testimonial i.fa-star-half-alt {
     color: var(--gold);
     margin: 0 1px;
 }
@@ -419,7 +440,11 @@ body:hover .custom-cursor {
     color: black;
 }
 
-/* Contact section */
+/* Contact */
+.contact {
+    background: var(--black);
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -452,7 +477,7 @@ body:hover .custom-cursor {
 
 .socials a {
     color: var(--white);
-    background: rgba(200,169,110,0.2);
+    background: rgba(200, 169, 110, 0.2);
     width: 42px;
     height: 42px;
     display: flex;
@@ -467,18 +492,20 @@ body:hover .custom-cursor {
     color: black;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(200,169,110,0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(200, 169, 110, 0.3);
     border-radius: 24px;
     color: white;
     font-family: inherit;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: var(--gold);
 }
@@ -491,12 +518,16 @@ body:hover .custom-cursor {
 }
 
 /* Booking */
+.booking {
+    background: linear-gradient(135deg, #0f0f15, #050508);
+}
+
 .booking-card {
     background: linear-gradient(135deg, #1a1a24, #0f0f15);
     border-radius: 48px;
     padding: 3rem 2rem;
     text-align: center;
-    box-shadow: 0 25px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
 }
 
 .booking-card h2 {
@@ -509,7 +540,7 @@ footer {
     background: #050508;
     text-align: center;
     padding: 2rem;
-    border-top: 1px solid rgba(200,169,110,0.2);
+    border-top: 1px solid rgba(200, 169, 110, 0.2);
 }
 
 footer a {
@@ -532,7 +563,7 @@ footer a {
         top: 70px;
         left: 0;
         width: 100%;
-        background: rgba(10,10,15,0.95);
+        background: rgba(10, 10, 15, 0.95);
         backdrop-filter: blur(16px);
         padding: 2rem;
         text-align: center;
